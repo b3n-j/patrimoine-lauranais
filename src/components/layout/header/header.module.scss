@@ -1,0 +1,50 @@
+@import "styles/variables";
+
+.header {
+  display: flex;
+  height: $header-height;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+  z-index: 3;
+  padding: 0 $spacing-s;
+  justify-content: space-between;
+  background-color: $primary-color;
+
+  .brand {
+    display: flex;
+    width: 150px;
+  }
+
+  .explore {
+    display: flex;
+    width: $container-max-width;
+  }
+
+  .tools {
+    display: flex;
+    justify-content: flex-end;
+    width: 150px;
+  }
+}
+
+.dark {
+  background-color: $accent-variant-color;
+}
+
+@include tablet {
+  .header {
+    height: $reduced-header-height;
+  }
+}
+
+@include mobile {
+  .header {
+    height: $reduced-header-height;
+  
+    .explore {
+      display: none;
+    }
+  }
+}
+

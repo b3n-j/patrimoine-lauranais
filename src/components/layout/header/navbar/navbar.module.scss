@@ -1,0 +1,15 @@
+@import "styles/variables";
+
+.navbar {
+  display: flex;
+  height: 100%;
+  margin-left: $spacing-m;
+
+  .buttons {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+}

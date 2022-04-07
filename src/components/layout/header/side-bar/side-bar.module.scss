@@ -1,0 +1,78 @@
+@import "styles/variables";
+
+.sideBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sideBarButton {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-left: $spacing-xs;
+    background-color: inherit;
+    border: none;
+
+    .icon svg {
+      display: flex;
+      height: 28px;
+      width: 28px;
+      fill: $content-color !important;
+
+      &:hover, &:focus {
+        fill: $content-color !important;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .sideBarMenu {
+    position: fixed;
+    right: 0;
+    top: $header-height;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  
+    .content {
+      box-sizing: content-box;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 100%;
+      width: 100%;
+      max-width: 420px;
+      background-color: inherit;
+      box-shadow: inset 0px 8px 8px -8px rgba(4, 17, 29, 0.25);
+      filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+      transform: translateX(100%);
+      transition: transform 200ms linear;
+      background-color: $primary-color;
+    }
+
+    .overlay {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transition: opacity 200ms linear;
+    }
+  }
+
+  .opened {
+    pointer-events: auto;
+  
+    .content {
+      transform: none;
+    }
+  
+    .overlay {
+      opacity: 0.2;
+    }
+  }
+}

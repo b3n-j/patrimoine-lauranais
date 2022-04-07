@@ -1,0 +1,7 @@
+@import "styles/variables";
+
+.profile {
+  display: flex;
+  width: $container-max-width;
+  justify-content: flex-start;
+}

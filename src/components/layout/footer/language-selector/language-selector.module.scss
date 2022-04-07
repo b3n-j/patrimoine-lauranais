@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.languageSelector {
+  display: flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: $accent-variant-color;
+  font-family: $primary-font-medium;
+  color: white;
+  align-items: flex-end;
+
+  &:hover, &:focus {
+    font-family: $primary-font-semi-bold;
+  }
+}

@@ -1,0 +1,17 @@
+@import "styles/globals";
+@import "styles/variables";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $primary-color;
+
+  .content {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    justify-content: center;
+    padding-bottom: $spacing-l;
+  }
+}

@@ -1,0 +1,141 @@
+@import "styles/variables";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .welcome {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), $primary-variant-color);
+    height: 60vh;
+    width: 100%;
+    justify-content: center;
+
+    .particles {
+      display: flex;
+      position: absolute;
+      height: 60vh;
+      width: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-flow: row wrap;
+      width: $container-max-width;
+      margin: $spacing-l $spacing-s;
+      z-index: 2;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+        .title {
+          margin-top: 0;
+        }
+
+        .subtitle {
+          font-family: $primary-font-light;
+          font-size: $font-size-5;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: row;
+          width: 300px;
+          padding-top: $spacing-s;
+          justify-content: space-between;
+        }
+      }
+  
+      .nft {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .typography {
+    display: flex;
+    flex-direction: column;
+    width: $container-max-width;
+  }
+
+  .section {
+    display: flex;
+  }
+}
+
+@include tablet {
+  .home {
+    .welcome {
+      height: 80vh;
+
+      .particles {
+        height: 80vh;
+      }
+
+      .content {
+        width: 100%;
+        margin: $spacing-l $spacing-s;
+        padding-bottom: 0px;
+
+        .description {
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          margin-bottom: $spacing-m + $spacing-s;
+
+          .buttons {
+            align-items: center;
+          }
+        }
+
+        .nft {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .home {
+
+    .welcome {
+      min-height: 900px;
+
+      .particles {
+        min-height: 900px;
+      }
+
+      .content {
+        flex-direction: column;
+        width: 100%;
+        margin: $spacing-m $spacing-m;
+
+        .description {
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          padding-bottom: $spacing-l;
+
+          .buttons {
+            align-items: center;
+          }
+        }
+
+        .nft {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

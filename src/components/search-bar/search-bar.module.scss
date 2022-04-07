@@ -1,0 +1,64 @@
+@import "styles/variables";
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .form {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid $primary-variant-color;
+    border-radius: 10px;
+
+    .input {
+      display: flex;
+      height: 42px;
+      width: 100%;
+      color: $content-color;
+      border: none;
+      border-radius: 10px;
+      font-family: $primary-font;
+      font-size: 16px;
+      padding-left: $spacing-s;
+      caret-color: $content-color;
+      background-color: $primary-color;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $content-color;
+      }
+    }
+
+
+  }
+}
+
+.dark {
+  .form {
+    .input {
+      background-color: $primary-variant-color;
+    }
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
+
+.submitButton .form .input {
+  border-radius: 10px 0 0 10px;
+}
+
+
+
+
+
+
+
+

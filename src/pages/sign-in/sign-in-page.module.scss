@@ -1,0 +1,8 @@
+@import "styles/variables";
+
+.signIn {
+  display: flex;
+  flex-direction: column;
+  width: $container-max-width;
+  justify-content: flex-start;
+}

@@ -1,0 +1,80 @@
+@import "styles/variables";
+
+.sitemap {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  justify-content: flex-end;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    margin-left: $spacing-l;
+
+    &:last-child {
+      width: 100px;
+    }
+
+    .link {
+      display: flex;
+      min-width: 100%;
+      line-height: 2;
+      font-size: $font-size-2;
+      font-family: $primary-font-medium;
+
+      &:first-child {
+        font-size: $font-size-3;
+        font-family: $primary-font-semi-bold;
+      }
+
+      a:hover, a:focus {
+        font-family: $primary-font-semi-bold;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .sitemap {
+    width: 100%;
+    justify-content: center;
+    margin: $spacing-s 0 0 0;
+
+    .column {
+      width: 25%;
+      margin-left: 0;
+
+      &:last-child {
+        width: 24%;
+        margin-left: 0;
+      }
+
+      .link {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .sitemap {
+    width: 100%;
+    flex-flow: row wrap;
+    align-items: start;
+    justify-content: center;
+
+    .column {
+      width: 45%;
+      margin: $spacing-m 0 0 0;
+
+      &:last-child {
+        width: 45%;
+      }
+
+      .link {
+        justify-content: center;
+      }
+    }
+  }
+}

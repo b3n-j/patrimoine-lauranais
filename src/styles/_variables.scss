@@ -1,0 +1,61 @@
+@import 'assets/fonts/fonts';
+@import 'styles/mixins';
+
+/* Header */
+$header-height: 70px;
+$reduced-header-height: 60px;
+
+/* Sections */ 
+$container-max-width: 1300px;
+$extended-container-max-width: 100%;
+
+/* Spacings */
+$spacing-xxxs: 2px;
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-s: 16px;
+$spacing-m: 32px;
+$spacing-l: 64px;
+$spacing-xl: 128px;
+$spacing-xxl: 274px;
+$spacing-xxxl: 548px;
+
+/* Fonts */
+$primary-font-thin: 'Poppins Thin', sans-serif;
+$primary-font-extra-light: 'Poppins Extra Light', sans-serif;
+$primary-font-light: 'Poppins Light', sans-serif;
+$primary-font: 'Poppins Regular', sans-serif;
+$primary-font-medium: 'Poppins Medium', sans-serif;
+$primary-font-semi-bold: 'Poppins Semi Bold', sans-serif;
+$primary-font-bold: 'Poppins Bold', sans-serif;
+$primary-font-extra-bold: 'Poppins Extra Bold', sans-serif;
+$primary-font-black: 'Poppins Black', sans-serif;
+
+/* Font sizes */
+$font-size-0: 8px;
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+$font-size-5: 20px;
+$font-size-6: 22px;
+$font-size-7: 26px;
+$font-size-8: 28px;
+$font-size-9: 32px;
+$font-size-10: 42px;
+
+/* Breakpoints */
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 1024px;
+$desktop-breakpoint: 1025px;
+
+/* Colors */
+$primary-color: var(--primary-color);
+$primary-variant-color: var(--primary-variant-color);
+$accent-color: var(--accent-color);
+$accent-variant-color: var(--accent-variant-color);
+$content-color: var(--content-color);
+$error-color: var(--error-color);
+$success-color: var(--success-color);
+$warning-color: var(--warning-color);
+$info-color: var(--info-color);

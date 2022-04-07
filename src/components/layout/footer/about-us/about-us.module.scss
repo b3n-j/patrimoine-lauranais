@@ -1,0 +1,69 @@
+@import "styles/variables";
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+
+  .logo {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    img {
+      display: flex;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .brand {
+    display: flex;
+    font-size: $font-size-8;
+  }
+
+  .paragraph {
+    margin: 0;
+    font-size: $font-size-4;
+  }
+}
+
+@include tablet {
+  .aboutUs {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+
+    .brand {
+      margin: 0 0 $spacing-s 0;
+      font-size: $font-size-6;
+    }
+
+    .paragraph {
+      font-size: $font-size-3;
+      margin-bottom: $spacing-s;
+      text-align: center;
+    }
+  }
+}
+
+@include mobile {
+  .aboutUs {
+    width: 100%;
+    align-items: center;
+
+    .brand {
+      margin: 0 0 0 0;
+      font-size: $font-size-6;
+    }
+
+    .paragraph {
+      font-size: $font-size-3;
+      margin: $spacing-s $spacing-s 0 $spacing-s;
+      text-align: center;
+    }
+  }
+}

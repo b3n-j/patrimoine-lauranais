@@ -1,0 +1,209 @@
+@import "styles/variables";
+
+.dropdownButton {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $primary-font-medium;
+  cursor: pointer;
+
+  &::before {
+    border-radius: 5px 5px 0px 0px;
+    transition: ease-in 0.2s;
+    content: "";
+    position: absolute;
+    background-color: $accent-color;
+    height: 0%;
+    width: 100%;
+    bottom: 0px;
+  }
+
+  &:hover {
+    .dropdownButtonLink {
+        &::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+      .dropdownButtonLabel {
+        opacity: 0;
+      }
+    }
+    .dropdownButtonMenu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &:last-child {
+    .dropdownButtonMenu {
+      left: auto;
+      right: 0px;
+    }
+  }
+
+  .dropdownButtonLink {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 0 $spacing-s;
+    justify-content: center;
+
+    &::before {
+      cursor: pointer;
+      color: $content-color;
+      position: absolute;
+      overflow: hidden;
+      content: attr(aria-label);
+      transition: ease-in-out 0.3s;
+      opacity: 0;
+      transform: scale(1.2);
+    }
+
+    .dropdownButtonIcon { 
+      height: 26px;
+      width: 26px;
+
+      svg {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        fill: $content-color !important;
+
+        &:hover, &:focus {
+          fill: $content-color !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .dropdownButtonLabel {
+      display: flex;
+      cursor: inherit;
+      min-width: 100%;
+      color: $content-color;
+      transition: ease-in 0.3s
+    }
+
+    &:focus {
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  .dropdownButtonMenu {
+    display: flex;
+    visibility: hidden;
+    transition: all 0.2s;
+    opacity: 0;
+    position: absolute;
+    top: $header-height;
+    left: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0 0 5px 5px;
+    box-shadow: rgba(4, 17, 29, 0.10) 0px 0px 8px 0px;
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+
+    .dropdownButtonMenuItem {
+      display: flex;
+      width: 100%;
+      border-bottom: solid 1px $primary-variant-color;
+      cursor: pointer;
+      color: $content-color;
+      min-width: 190px;
+      height: 44px;
+
+      &:hover {
+        background-color: rgba(4, 17, 29, 0.05);
+        box-shadow: rgba(4, 17, 29, 0.20) 0px 0px 8px 0px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .dropdownButtonMenuItemLink {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0 $spacing-s;
+
+        .dropdownButtonMenuItemIcon { 
+          display: flex;
+          height: 20px;
+          width: 20px;
+          margin-right: $spacing-xs;
+
+          svg {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: auto;
+            fill: $content-color !important;
+      
+            path {
+              height: 100%;
+            }
+    
+            &:hover, &:focus {
+              fill: $content-color !important;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .dropdownButtonMenuItemLabel {
+          display: flex;
+          width: 100%;
+          cursor: inherit;
+        }
+      }
+    }
+
+  }
+
+  .dark {
+    background-color: $accent-variant-color;
+
+    .dropdownButtonMenuItem {
+      &:hover {
+        filter: brightness(1.8);
+      }
+    }
+  }
+}
+
+.selected {
+  &::before {
+    height: 4px;
+  }
+
+  .dropdownButtonLink .dropdownButtonLabel {
+    opacity: 0;
+  }
+
+  .dropdownButtonLink {
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+@include tablet {
+  .dropdownButton .dropdownButtonMenu {
+    top: $reduced-header-height;
+  }
+}

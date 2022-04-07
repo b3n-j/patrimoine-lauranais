@@ -1,0 +1,92 @@
+@import "styles/variables";
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+
+  .title {
+    display: flex;
+    font-size: $font-size-5;
+    width: 100%;
+  }
+
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+
+    .socialMediaIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      margin-right: $spacing-s;
+
+      .link {
+        display: flex;
+        background-color: $accent-color;
+        width: 54px;
+        height: 54px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        &:hover, &:focus {
+          filter: brightness(1.1);
+        }
+
+        .icon svg {
+          display: flex;
+          height: 30px;
+          width: 30px;
+          fill: white !important;
+        }
+      }
+    }
+
+    .dark {
+      .link {
+        background-color: $primary-variant-color;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .socialMedia {
+    width: 100%;
+
+    .title {
+      justify-content: center;
+    }
+
+    .list {
+      justify-content: center;
+
+      .socialMediaIcon {
+        margin: 0 $spacing-xs + $spacing-xxs;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .socialMedia {
+    width: 100%;
+    
+    .title {
+      justify-content: center;
+    }
+
+    .list {
+      justify-content: center;
+
+      .socialMediaIcon {
+        margin: $spacing-xs $spacing-xs;
+      }
+    }
+  }
+}

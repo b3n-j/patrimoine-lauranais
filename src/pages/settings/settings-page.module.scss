@@ -1,0 +1,12 @@
+@import "styles/variables";
+
+.settings {
+  display: flex;
+  width: $container-max-width;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .switchButton {
+    background-color: green;
+  }
+}

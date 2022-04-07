@@ -1,0 +1,127 @@
+@import "styles/variables";
+
+$thickness: 2px;
+$color: $content-color;
+$selected-color: $content-color;
+
+.animatedLoop {
+  display: flex;
+  position: relative;
+  min-width: 50px;
+  width: 50px;
+  min-height: 100%;
+  outline: inherit;
+  border: none;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  background-color: $primary-color;
+
+  .circle {
+    position: absolute;
+    left: 17px;
+    top: 11px;
+    width: 9px;
+    height: 9px;
+    border-width: $thickness;
+    border: $thickness solid $color;
+    border-radius: 50%;
+    transition: 0.1s ease all;
+  }
+
+  .bar {
+    position: absolute;
+    top: 25px;
+    right: 14px;
+    display: block;
+    width: 10px;
+    height: $thickness;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.2s ease all;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: $thickness;
+      background-color: $color;
+      border-radius: 10px;
+      transform: rotateZ(0);
+      transition: 0.2s ease all;
+    }
+  }
+
+  &:hover {
+    .circle {
+      top: 50%;
+      width: 12px;
+      height: $thickness;
+      background-color: $selected-color;
+      border-width: 0;
+      border-radius: 20px;
+    }
+  
+    .bar {
+      background-color: $selected-color;
+      top: 50%;
+      right: 16px;
+      width: 16px;
+      transform: rotateZ(0);
+    
+      &::before {
+        bottom: 3px;
+        transform: rotateZ(52deg);
+      }
+      &::after {
+        background-color: red;
+        bottom: -3px;
+        transform: rotateZ(-52deg);
+      }
+      &::before, &::after {
+        background-color: $selected-color;
+        right: -3px;
+        width: 8px;
+      }
+    }
+  }
+}
+
+.toArrow {
+  .circle {
+    top: 50%;
+    width: 12px;
+    height: $thickness;
+    background-color: $selected-color;
+    border-width: 0;
+    border-radius: 20px;
+  }
+
+  .bar {
+    background-color: $selected-color;
+    top: 50%;
+    right: 16px;
+    width: 16px;
+    transform: rotateZ(0);
+  
+    &::before {
+      bottom: 3px;
+      transform: rotateZ(52deg);
+    }
+    &::after {
+      bottom: -3px;
+      transform: rotateZ(-52deg);
+    }
+    &::before, &::after {
+      background-color: $selected-color;
+      right: -3px;
+      width: 8px;
+    }
+  }
+}
+
+.dark {
+  background-color: $primary-variant-color;
+}
